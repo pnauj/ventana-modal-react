@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import './index.css';
-
+import Modal from "./Components/Modal";
+import "./index.css";
 
 function App() {
   return (
@@ -9,6 +9,8 @@ function App() {
       <ContenedorBotones>
         <Boton>Modal 1</Boton>
       </ContenedorBotones>
+
+      <Modal />
     </div>
   );
 }
