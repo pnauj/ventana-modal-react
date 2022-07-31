@@ -66,4 +66,4 @@ const Contenido = styled.div`
 `;
 
 
-//video 00:09:00
+//video 00:20:00
