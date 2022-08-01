@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Modal from "./Components/Modal";
 import "./index.css";
 
 function App() {
+  const [estadoModal1, setEstadoModal1] = useState(false);
+
   return (
     <div>
+      <Contenido></Contenido>
       <ContenedorBotones>
-        <Boton>Modal 1</Boton>
+        <Boton onClick={() => setEstadoModal1(!estadoModal1)}>Modal 1</Boton>
       </ContenedorBotones>
 
-      <Modal />
+      <Modal
+        estado={estadoModal1}
+        cambiarEstado={setEstadoModal1}
+        Titulo="Hola!"
+      >
+        <Contenido>
+          <h1>Ventana Modal</h1>
+          <p>Reutilizable y opciones de personalizacion</p>
+          <Boton onClick={() => setEstadoModal1(!estadoModal1)}>Aceptar</Boton>
+        </Contenido>
+      </Modal>
     </div>
   );
 }
@@ -18,7 +31,7 @@ function App() {
 export default App;
 
 const ContenedorBotones = styled.div`
-  paddin: 40px;
+  padding: 40px;
   display: flex;
   flex-warp: warp;
   justify-content: center;
@@ -64,6 +77,5 @@ const Contenido = styled.div`
     border-radius: 3px;
   }
 `;
-
 
 //video 00:20:00
